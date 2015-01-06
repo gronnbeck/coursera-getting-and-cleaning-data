@@ -1,0 +1,17 @@
+{
+    "contents" : "\nurl <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv\"\nfilepath <- \"./q1.csv\"\ndownload.file(url, destfile = filepath, method=\"curl\")\n\na <- read.csv(filepath)\nb <- a[a$VAL >= 24,]$VAL\ncount <- length(b[!is.na(b)])\n\nprint(count)\n",
+    "created" : 1420562806405.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "985411133",
+    "id" : "6F4EF568",
+    "lastKnownWriteTime" : 1420563660,
+    "path" : "~/dev/04-kompetanse/getting-and-cleaning-data/week1/q1.r",
+    "project_path" : "q1.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

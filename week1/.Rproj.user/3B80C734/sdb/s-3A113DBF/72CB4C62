@@ -1,0 +1,17 @@
+{
+    "contents" : "library(data.table)\n\nurl <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv \"\nfilepath <- \"./q5.csv\"\n#download.file(url, destfile = filepath, method=\"curl\")\n\nDT <- fread(filepath)\n\nprint(system.time(DT[,mean(pwgtp15),by=SEX]))\nprint(system.time({mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15)}))\nprint(system.time(tapply(DT$pwgtp15,DT$SEX,mean)))\nprint(system.time(mean(DT$pwgtp15,by=DT$SEX)))\n#print(system.time({rowMeans(DT)[DT$SEX==1]; rowMeans(DT)[DT$SEX==2]}))\nprint(system.time(sapply(split(DT$pwgtp15,DT$SEX),mean)))\n\n\n#print(DT[,mean(pwgtp15),by=SEX])\n#print(mean(DT$pwgtp15,by=DT$SEX))\n#print(sapply(split(DT$pwgtp15,DT$SEX),mean))",
+    "created" : 1420564630300.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4102321426",
+    "id" : "72CB4C62",
+    "lastKnownWriteTime" : 1420565277,
+    "path" : "~/dev/04-kompetanse/getting-and-cleaning-data/week1/q5.r",
+    "project_path" : "q5.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

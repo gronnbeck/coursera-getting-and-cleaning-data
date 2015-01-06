@@ -1,0 +1,17 @@
+{
+    "contents" : "library(xlsx)\n\nurl <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx\"\nfilepath <- \"./q3.xlsx\"\ndownload.file(url, destfile = filepath, method=\"curl\")\n\ncolIndex <- 7:15\nrowIndex <- 18:23\n\ndat <- read.xlsx(filepath, sheetIndex=1, header=TRUE,\n                  colIndex=colIndex, rowIndex=rowIndex)\n\ns <- sum(dat$Zip*dat$Ext,na.rm=T) \n\nprint(s)",
+    "created" : 1420563641204.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "915674875",
+    "id" : "E8419689",
+    "lastKnownWriteTime" : 1420564168,
+    "path" : "~/dev/04-kompetanse/getting-and-cleaning-data/week1/q3.r",
+    "project_path" : "q3.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
